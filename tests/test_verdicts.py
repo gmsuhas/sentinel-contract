@@ -32,6 +32,16 @@ class VerdictTests(unittest.TestCase):
         evidence = [{"signal": "checkout.completed", "value": True}, {"signal": "ledger.unchanged", "value": False}]
         self.assertEqual(evaluate(self.contract, evidence, "restart-payment")["verdict"], "failed")
 
+    def test_failed_journey_is_not_recovery(self):
+        evidence = [
+            {"signal": "checkout.completed", "value": False},
+            {"signal": "payment.invalid_rejected", "value": True},
+            {"signal": "ledger.unchanged", "value": True},
+        ]
+        report = evaluate(self.contract, evidence, "restart-payment")
+        self.assertEqual(report["verdict"], "failed")
+        self.assertEqual(report["events"][0]["reason"], "journey did not recover")
+
 
 if __name__ == "__main__":
     unittest.main()

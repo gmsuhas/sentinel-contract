@@ -20,7 +20,7 @@ python3 -m sentinel_contract.cli examples/checkout.json /tmp/none.json --action 
 python3 -m sentinel_contract.cli examples/checkout.json /tmp/none.json --action scale-database
 ```
 
-The first is `incomplete`; the second is `handover`.
+The first is `incomplete`; the second is `handover`. Both exit 1, as do `failed` and `unsafe`. A missing file, or evidence that is not a list, exits 2 and prints the error. `--report path` writes the JSON verdict beside the printed word.
 
 ## Verdicts
 
