@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinel-contract"
+version = "0.1.0"
+description = "Prove or hand over a self-healing action from observability evidence"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+sentinel = "sentinel_contract.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sentinel_contract*"]

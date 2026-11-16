@@ -1,0 +1,8 @@
+{
+  "journey": "checkout",
+  "owner": "payments-oncall",
+  "allowed_actions": ["restart-payment"],
+  "success_signal": "checkout.completed",
+  "safety_signals": ["payment.invalid_rejected"],
+  "protected_records": "ledger.unchanged"
+}

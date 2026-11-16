@@ -1,0 +1,5 @@
+[
+  {"signal": "checkout.completed", "value": true},
+  {"signal": "payment.invalid_rejected", "value": true},
+  {"signal": "ledger.unchanged", "value": true}
+]
