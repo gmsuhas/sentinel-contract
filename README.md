@@ -4,6 +4,8 @@ A self-healing action is not recovered until its observability contract says so.
 
 **TLDR.** This small Python tool reads one recovery contract and the evidence collected after an action. `restart-payment` can be recovered only when checkout succeeds, invalid input is still refused, and protected records are unchanged. Missing evidence stays incomplete. An action outside the allowlist is handed to the named on-call owner instead of being guessed.
 
+Read this if a restarted service is being reported as recovered. Missing evidence stays incomplete, and an action outside the allowlist goes to the named on-call owner instead of being guessed.
+
 This is a local decision tool. It does not restart infrastructure, call a model, or claim production recovery.
 
 ## Try it
